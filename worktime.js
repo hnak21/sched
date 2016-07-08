@@ -5,6 +5,7 @@ var worktime = (function(option){
   var config,
       datastore,
       fcevent,
+      calendar,
       jqMap = {};
 
   // Global Functions
@@ -13,10 +14,13 @@ var worktime = (function(option){
 
     datastore = worktime.datastore;
     fcevent = worktime.fcevent;
+    calendar = worktime.calendar;
 
     datastore.initModule();
 
     fcevent.initModule({datastore: datastore}, $('#external-events'));
+
+    calendar.initModule({}, $('#calendar'))
   }
 
   return {
